@@ -1,0 +1,29 @@
+{
+  "trriforce": {
+    "nickname": "trriforce",
+    "name": "Александр",
+    "subName": "Трифонов",
+    "avatarUrl": "https://via.placeholder.com/75x75",
+    "subscribers": ["pavel.pavlov"],
+    "subscriptions": ["pavel.pavlov", "chrome_boy_21"],
+    "postsById": ["postId1"]
+  },
+  "pavel.pavlov": {
+    "nickname": "pavel.pavlov",
+    "name": "Павел",
+    "subName": "Павлов",
+    "avatarUrl": "https://via.placeholder.com/75x75",
+    "subscribers": ["trriforce", "chrome_boy_21"],
+    "subscriptions": ["trriforce", "chrome_boy_21"],
+    "postsById": ["postId2"]
+  },
+  "chrome_boy_21": {
+    "nickname": "chrome_boy_21",
+    "name": "Антон",
+    "subName": "Черноок",
+    "avatarUrl": "https://via.placeholder.com/75x75",
+    "subscribers": ["trriforce", "chrome_boy_21", "pavel.pavlov"],
+    "subscriptions": [],
+    "postsById": ["postId3", "postId4"]
+  }
+}

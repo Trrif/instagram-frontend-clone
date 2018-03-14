@@ -1,0 +1,28 @@
+{
+  "comments": {
+    "commentHash1": {
+      "id":"commentHash1",
+      "text": "Тестовый коммент ",
+      "userId": "userId2",
+      "liked": false,
+      "likesById": ["userId1", "userId2"],
+      "reply": null
+    },
+    "commentHash2": {
+      "id":"commentHash2",
+      "text": "Тестовый коммент 2",
+      "userId": "userId2",
+      "liked": true,
+      "likesById": ["userId3"],
+      "reply": "commentHash1"
+    },
+    "commentHash3": {
+      "id":"commentHash3",
+      "text": "Тестовый коммент 3",
+      "userId": "userId3",
+      "liked": false,
+      "likesById": ["userId2"],
+      "reply": "commentHash1"
+    }
+  }
+}

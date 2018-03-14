@@ -1,0 +1,38 @@
+{
+  "postId1":{
+    "id":"postId1",
+    "postedBy": "trrriforce",
+    "desctiption":"Тестовое описание",
+    "bodyUrl":"https://via.placeholder.com/600x400",
+    "liked":false,
+    "likesByNicknames": ["trrriforce", "pavel.pavlov"],
+    "commentsById": ["commentId1", "commentId2"]
+  },
+  "postId2":{
+    "id":"postId2",
+    "postedBy": "pavel.pavlov",
+    "desctiption":"",
+    "bodyUrl":"https://via.placeholder.com/600x400",
+    "liked":false,
+    "likesByNicknames": [ "pavel.pavlov" ],
+    "commentsById": ["commentId1"]
+  },
+  "postId3":{
+    "id":"postId3",
+    "postedBy": "chrome_boy_21",
+    "desctiption":"",
+    "bodyUrl":"https://via.placeholder.com/600x400",
+    "liked":false,
+    "likesByNicknames": ["pavel.pavlov" ],
+    "commentsById": ["commentId2"]
+  },
+  "postId4":{
+    "id":"postId4",
+    "postedBy": "chrome_boy_21",
+    "desctiption":"",
+    "bodyUrl":"https://via.placeholder.com/600x400",
+    "liked":true,
+    "likesByNicknames": [ "trriforce" ],
+    "commentsById": []
+  }
+}
