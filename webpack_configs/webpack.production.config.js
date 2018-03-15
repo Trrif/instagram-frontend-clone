@@ -1,5 +1,5 @@
-import webpack from 'webpack';
-import Config from 'webpack-config';
+import webpack from 'webpack'
+import Config from 'webpack-config'
 
 export default new Config().extend('webpack_configs/webpack.base.config.js').merge({
   devtool: 'source-map',
@@ -12,4 +12,4 @@ export default new Config().extend('webpack_configs/webpack.base.config.js').mer
         warnings: true
       }
     })]
-});
+})

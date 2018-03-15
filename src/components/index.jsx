@@ -1,8 +1,8 @@
 import React from 'react'
-import { Grid } from 'semantic-ui-react'
+import PostsConnect from './posts/index.jsx'
 
 export default class App extends React.Component {
   render () {
-    return  <div> default </div>
+    return <PostsConnect/>
   }
 }

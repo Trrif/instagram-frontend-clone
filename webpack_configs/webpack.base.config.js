@@ -1,23 +1,24 @@
-import Config from 'webpack-config';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+import Config from 'webpack-config'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import path from 'path'
 
 export default new Config().merge({
-  entry: './client/index.js',
+  entry: './src/index.jsx',
   output: {
-    path: __dirname + '/../public',
+    path: path.join(__dirname, '/../public')
   },
   module: {
     loaders: [
       {
         test: /.jsx?$/,
         loader: 'babel-loader',
-        exclude: /node_modules/,
+        exclude: /node_modules/
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './client/index.html',
-      inject: "body"
-     })]
-});
+      template: './src/index.html',
+      inject: 'body'
+    })]
+})

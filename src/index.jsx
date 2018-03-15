@@ -1,18 +1,18 @@
-//react
+// react
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {AppContainer} from 'react-hot-loader'
 
-//redux
-import {createStore} from 'redux'
+// redux
 import {Provider} from 'react-redux'
-import reducers from './reducers'
 
-//mainComponent
-import App from './components'
+// store
+import store from './store'
 
-let store = createStore(reducers)
+// mainComponent
+import App from './components/index.jsx'
 
+console.log(store.getState())
 ReactDOM.render(
   <AppContainer>
     <Provider store={store}>
