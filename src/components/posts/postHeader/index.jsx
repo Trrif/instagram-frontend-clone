@@ -1,11 +1,13 @@
 import React from 'react'
-
+import { Grid, PostedBy, PostedFrom, PostedInfo } from './style'
 export default class PostHeader extends React.Component {
   render () {
-    return <div>
-      <img width='50px' height='50px' src={this.props.postedBy + '.png'} alt=''/>
-      {this.props.postedBy}
-      {this.props.location}
-    </div>
+    return <Grid>
+      <img width='30px' height='30px' src={this.props.postedBy + '.png'} alt=''/>
+      <PostedInfo>
+        <PostedBy> {this.props.postedBy} </PostedBy>
+        <PostedFrom> {this.props.location} </PostedFrom>
+      </PostedInfo>
+    </Grid>
   }
 }

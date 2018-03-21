@@ -1,7 +1,7 @@
 {
-  "name": "textrpg",
+  "name": "instagram",
   "version": "1.0.0",
-  "description": "React text rpg",
+  "description": "Instagram clone writed on redux/react/immutable",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,7 +12,9 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2",
+    "ramda": "^0.25.0",
     "react": "^16.2.0",
+    "react-autosize-textarea": "^3.0.2",
     "react-dom": "^16.2.0",
     "react-hot-loader": "^4.0.0-beta.18",
     "react-redux": "^5.0.6",

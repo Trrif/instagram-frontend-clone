@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import React from 'react'
 import Post from './post.jsx'
-import { toogleLike } from '../../actions/userActions'
+import { toogleLike, insertComment } from '../../actions/userActions'
 
 class Posts extends React.Component {
   render () {
@@ -9,7 +9,8 @@ class Posts extends React.Component {
       return <Post
         key={post}
         post={this.props.posts[post]}
-        comments={this.props.comments}
+        comments={this.props.posts[post].comments}
+        insertComment={this.props.insertComment}
         user={this.props.user}
         toggleLike={this.props.toogleLike} />
     })
@@ -18,9 +19,8 @@ class Posts extends React.Component {
 const mapStateToProps = (state) => {
   return {
     posts: state.posts,
-    comments: state.comments,
     user: state.user
   }
 }
-const PostsConnect = connect(mapStateToProps, {toogleLike})(Posts)
+const PostsConnect = connect(mapStateToProps, {toogleLike, insertComment})(Posts)
 export default PostsConnect

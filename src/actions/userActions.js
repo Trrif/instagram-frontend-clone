@@ -1,9 +1,17 @@
 const TOOGLE_LIKE = 'TOOGLE_LIKE'
-
-export function toogleLike (username, postId) {
+const INSERT_COMMENT = 'INSERT_COMMENT'
+export function insertComment (username, postId, text) {
+  return {
+    type: INSERT_COMMENT,
+    username,
+    postId,
+    text
+  }
+}
+export function toogleLike (username, path) {
   return {
     type: TOOGLE_LIKE,
     username,
-    postId
+    path
   }
 }

@@ -3,49 +3,78 @@ const posts = {
     id: 'postId1',
     postedBy: 'trriforce',
     desctiption: 'Тестовое описание',
-    bodyUrl: 'https://via.placeholder.com/600x400',
-    isLiked: true,
-    likesByUsernames: ['trriforce', 'pavel.pavlov'],
+    bodyUrl: 'https://placeimg.com/600/400/people',
+    likes: ['trriforce', 'pavel.pavlov'],
     location: 'Sevastopol',
-    commentsIds: ['commentId1', 'commentId2'],
     date: '02:03:27',
-    marks: [{x: 240, y: 213, username: 'trriforce'}]
+    marks: [{x: 240, y: 213, username: 'trriforce'}, {x: 123, y: 333, username: 'pavel.pavlov'}, {x: 111, y: 111, username: 'chrome_boy_21'}],
+    comments: {
+      commentId1: {
+        id: 'commentId1',
+        text: 'Тестовый коммент ',
+        username: 'chrome_boy_21'
+      },
+      commentId2: {
+        id: 'commentId2',
+        text: 'Тестовый коммент 2',
+        username: 'pavel.pavlov'
+      },
+      commentId3: {
+        id: 'commentId3',
+        text: 'Тестовый коммент 3',
+        username: 'trriforce'
+      },
+      commentsIds: ['commentId1', 'commentId2', 'commentId3']
+    }
   },
   postId2: {
     id: 'postId2',
     postedBy: 'pavel.pavlov',
     desctiption: '',
-    bodyUrl: 'https://via.placeholder.com/600x400',
-    isLiked: false,
-    likesByUsernames: ['pavel.pavlov'],
+    bodyUrl: 'https://placeimg.com/600/400/people',
+    likes: ['pavel.pavlov'],
     location: 'Kuzneckiy',
-    commentsIds: ['commentId1'],
     date: '02:03:27',
-    marks: [{x: 240, y: 213, username: 'trriforce'}]
+    marks: [],
+    comments: {
+      commentId1: {
+        id: 'commentId1',
+        text: 'Тестовый коммент ',
+        username: 'chrome_boy_21'
+      },
+      commentId2: {
+        id: 'commentId2',
+        text: 'Тестовый коммент 2',
+        username: 'pavel.pavlov'
+      },
+      commentsIds: ['commentId1', 'commentId2']
+    }
   },
   postId3: {
     id: 'postId3',
     postedBy: 'chrome_boy_21',
     desctiption: '',
-    bodyUrl: 'https://via.placeholder.com/600x400',
-    isLiked: false,
-    likesByUsernames: ['pavel.pavlov'],
+    bodyUrl: 'https://placeimg.com/600/400/people',
+    likes: ['pavel.pavlov'],
     location: 'Blagoveshchensk',
-    commentsIds: ['commentId2'],
     date: '02:03:27',
-    marks: [{x: 240, y: 213, username: 'trriforce'}]
+    marks: [{x: 240, y: 213, username: 'trriforce'}],
+    comments: {
+      commentsIds: []
+    }
   },
   postId4: {
     id: 'postId4',
     postedBy: 'chrome_boy_21',
     desctiption: '',
-    bodyUrl: 'https://via.placeholder.com/600x400',
-    isLiked: true,
-    likesByUsernames: ['trriforce'],
+    bodyUrl: 'https://placeimg.com/600/400/people',
+    likes: ['trriforce'],
     location: 'Blagoveshchensk',
-    commentsIds: [],
     date: '02:03:27',
-    marks: [{x: 240, y: 213, username: 'trriforce'}]
+    marks: [{x: 240, y: 213, username: 'trriforce'}],
+    comments: {
+      commentsIds: []
+    }
   },
   postsIds: ['postId1', 'postId2', 'postId3', 'postId4']
 }
