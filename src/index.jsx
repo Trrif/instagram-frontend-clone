@@ -10,13 +10,13 @@ import {Provider} from 'react-redux'
 import store from './store'
 
 // mainComponent
-import App from './components/index.jsx'
+import AppConnect from './components/index.jsx'
 
 console.log(store.getState())
 ReactDOM.render(
   <AppContainer>
     <Provider store={store}>
-      <App />
+      <AppConnect />
     </Provider>
   </AppContainer>,
   document.getElementById('root')

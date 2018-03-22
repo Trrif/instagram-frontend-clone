@@ -42,6 +42,8 @@ export default class Comments extends React.Component {
             maxHeight: 80,
             border: 'none',
             width: '100%',
+            wordBreak: 'break-word',
+            resize: 'none',
             outline: 'none'}}
           placeholder={'Добавьте комментарий...'}
           value={this.state.value}

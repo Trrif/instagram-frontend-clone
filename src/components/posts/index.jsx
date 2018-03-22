@@ -1,9 +1,7 @@
-import { connect } from 'react-redux'
 import React from 'react'
 import Post from './post.jsx'
-import { toogleLike, insertComment } from '../../actions/userActions'
 
-class Posts extends React.Component {
+export default class Posts extends React.Component {
   render () {
     return this.props.posts.postsIds.map((post) => {
       return <Post
@@ -16,11 +14,3 @@ class Posts extends React.Component {
     })
   }
 }
-const mapStateToProps = (state) => {
-  return {
-    posts: state.posts,
-    user: state.user
-  }
-}
-const PostsConnect = connect(mapStateToProps, {toogleLike, insertComment})(Posts)
-export default PostsConnect
