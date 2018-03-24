@@ -27,7 +27,7 @@ export default class Comments extends React.Component {
   }
   render () {
     return <Grid>
-      {this.props.comments.commentsIds.map((commentId) => {
+      {Object.keys(this.props.comments).map((commentId) => {
         return <Comment
           key={commentId}
           comment={this.props.comments[commentId]}

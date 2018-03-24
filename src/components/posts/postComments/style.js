@@ -10,4 +10,5 @@ color: #262626;
 export const CommentForm = Styled.form`
 padding-top: 16px;
 padding-bottom: 16px;
+border-top: solid 1px #e6e6e6;
 `

@@ -20,3 +20,8 @@ cursor: pointer;
 export const PostedInfo = Styled.div`
 margin-left: 12px;
 `
+export const PostedByImg = Styled.img`
+width: 30px; 
+height: 30px;
+border-radius: 15px; 
+`

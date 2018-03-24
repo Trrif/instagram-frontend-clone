@@ -1,5 +1,4 @@
 import Config from 'webpack-config'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
 import path from 'path'
 
 export default new Config().merge({
@@ -15,10 +14,5 @@ export default new Config().merge({
         exclude: /node_modules/
       }
     ]
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-      inject: 'body'
-    })]
+  }
 })
