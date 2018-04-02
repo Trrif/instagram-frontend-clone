@@ -1,7 +1,15 @@
 import * as R from 'ramda'
-
-export const posts = (state = {}, action) => {
+const posts = (state = {}, action) => {
   switch (action.type) {
+    case 'NEW_POST': {
+      return {
+        ...state,
+        ...action.post
+      }
+    }
+    case 'SET_POSTS': {
+      return action.posts
+    }
     case 'TOOGLE_LIKE': {
       const lens = R.lensPath(action.path)
       const arrayOfLikes = R.view(lens, state)
@@ -14,20 +22,15 @@ export const posts = (state = {}, action) => {
     case 'INSERT_COMMENT': {
       const lens = R.lensPath([action.postId, 'comments'])
       const comments = R.view(lens, state)
-      const commentId = 'commentId' + Object.keys(state[action.postId].comments).length
+      const commentId = 'commentId' + (state[action.postId].comments ? Object.keys(state[action.postId].comments).length : 0)
       const comment = {
         id: commentId,
         text: action.text,
         username: action.username
       }
-      const insertComment = R.compose(
-        R.merge({[commentId]: comment})
-      )
-      return R.set(lens, insertComment(comments), state)
+      return R.set(lens, R.assoc(commentId, comment, comments), state)
     }
     default: return state
   }
 }
-export const user = (state = {}, action) => {
-  return state
-}
+export default posts

@@ -26,16 +26,21 @@ export default class Comments extends React.Component {
     }
   }
   render () {
+    const comments = () => {
+      if (this.props.comments) {
+        return Object.keys(this.props.comments).map((commentId) => {
+          return <Comment
+            key={commentId}
+            comment={this.props.comments[commentId]}
+            likes={this.props.comments[commentId].likes}
+            username={this.props.username}
+            postId={this.props.postId}
+            toggleLike={this.props.toggleLike} />
+        })
+      }
+    }
     return <Grid>
-      {Object.keys(this.props.comments).map((commentId) => {
-        return <Comment
-          key={commentId}
-          comment={this.props.comments[commentId]}
-          likes={this.props.comments[commentId].likes}
-          username={this.props.username}
-          postId={this.props.postId}
-          toggleLike={this.props.toggleLike} />
-      })}
+      {comments()}
       <CommentForm>
         <TextareaAutosize
           style={{ minHeight: 20,

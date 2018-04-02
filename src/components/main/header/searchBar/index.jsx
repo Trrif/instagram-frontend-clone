@@ -7,8 +7,6 @@ export default class SearchBar extends React.Component {
     this.onChange = this.onChange.bind(this)
   }
   onChange (event) {
-    clearTimeout()
-    setTimeout(() => { console.log('ss') }, 1000)
     this.setState({value: event.target.value})
   }
   render () {
