@@ -1,4 +1,5 @@
 import * as R from 'ramda'
+import socket from '../components/main/socketIo'
 const posts = (state = {}, action) => {
   switch (action.type) {
     case 'NEW_POST': {
@@ -17,6 +18,7 @@ const posts = (state = {}, action) => {
         R.find((username) => username === action.username),
         R.filter((username) => username !== action.username),
         R.insert(R.last, action.username))
+      if (action.from === undefined) socket.emit('toggleLike', {...action, isFind: !!arrayOfLikes.includes(action.username)})
       return R.set(lens, likeToogler(arrayOfLikes), state)
     }
     case 'INSERT_COMMENT': {
@@ -28,6 +30,7 @@ const posts = (state = {}, action) => {
         text: action.text,
         username: action.username
       }
+      if (action.from === undefined) socket.emit('newComment', action)
       return R.set(lens, R.assoc(commentId, comment, comments), state)
     }
     default: return state

@@ -71,10 +71,30 @@ io.on('connection', function (socket) {
         })
       })
   })
+  socket.on('toggleLike', function (payload) {
+    console.log(payload)
+    console.log(`${payload.isFind ? '$pull' : '$push'}`)
+    PostModel.findByIdAndUpdate(payload.path[0], {[`${payload.isFind ? '$pull' : '$push'}`]: {likes: payload.username}})
+      .then(post => {
+        console.log(post.likes)
+        UserModel.findOne({'username': post.postedBy})
+          .then(user => {
+            console.log(user)
+            if (user.subscribers) {
+              [...user.subscribers, user.username].map(sub => {
+                if (clients[sub]) {
+                  if (sub !== payload.username) {
+                    io.sockets.connected[clients[sub].id].emit('toggleLike', payload)
+                  }
+                }
+              })
+            }
+          })
+      })
+  })
   socket.on('newComment', function (payload) {
     PostModel.findById(payload.postId)
       .then(post => {
-        console.log(post)
         const commentId = 'commentId' + Object.keys(post.comments).length
         const comment = {
           id: commentId,
@@ -88,7 +108,7 @@ io.on('connection', function (socket) {
             UserModel.findOne({'username': post.postedBy})
               .then(user => {
                 if (user.subscribers) {
-                  user.subscribers.map(sub => {
+                  [...user.subscribers, user.username].map(sub => {
                     if (clients[sub]) {
                       if (sub !== payload.username) {
                         io.sockets.connected[clients[sub].id].emit('newComment', payload)
@@ -97,7 +117,6 @@ io.on('connection', function (socket) {
                   })
                 }
               })
-            console.log(updatedComments)
           })
       })
   })

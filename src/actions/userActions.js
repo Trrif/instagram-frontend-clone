@@ -2,24 +2,27 @@ const TOOGLE_LIKE = 'TOOGLE_LIKE'
 const INSERT_COMMENT = 'INSERT_COMMENT'
 const NEW_POST = 'NEW_POST'
 
-export function newPost (post) {
+export function newPost (post, from) {
   return {
     type: NEW_POST,
-    post
+    post,
+    from
   }
 }
-export function insertComment (username, postId, text) {
+export function insertComment (username, postId, text, from) {
   return {
     type: INSERT_COMMENT,
     username,
     postId,
-    text
+    text,
+    from
   }
 }
-export function toogleLike (username, path) {
+export function toogleLike (username, path, from) {
   return {
     type: TOOGLE_LIKE,
     username,
-    path
+    path,
+    from
   }
 }

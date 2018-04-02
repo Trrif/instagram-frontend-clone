@@ -20,10 +20,13 @@ import { Grid, ContentGrid, Container } from './style'
 class App extends React.Component {
   componentDidMount () {
     socket.on('newPost', (post) => {
-      this.props.newPost(post)
+      this.props.newPost(post, 'socket')
     })
     socket.on('newComment', (payload) => {
-      this.props.insertComment(payload.username, payload.postId, payload.text)
+      this.props.insertComment(payload.username, payload.postId, payload.text, 'socket')
+    })
+    socket.on('toggleLike', (payload) => {
+      this.props.toogleLike(payload.username, payload.path, 'socket')
     })
     fetch('initialState', {
       method: 'POST',
