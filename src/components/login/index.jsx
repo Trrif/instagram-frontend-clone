@@ -1,5 +1,7 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
+import { Grid, Form } from './style'
+
 export default class Login extends React.Component {
   constructor (props) {
     super(props)
@@ -47,9 +49,11 @@ export default class Login extends React.Component {
     if (localStorage.token) {
       return <Redirect to='/' />
     }
-    return <div>
-      {this.state.message}
-      <form onSubmit={this.submitHandle} >
+    return <Grid>
+      <div>
+        {this.state.message}
+      </div>
+      <Form onSubmit={this.submitHandle} >
         <input
           value={this.state.username}
           onChange={this.inputHandle}
@@ -65,7 +69,10 @@ export default class Login extends React.Component {
         <input
           type='submit'
           value='Отправить'/>
-      </form>
-    </div>
+      </Form>
+      <div>
+        Тестовые аккаунты: trriforce, chrome_boy_21, pavel.pavlov (пароль test)
+      </div>
+    </Grid>
   }
 }
