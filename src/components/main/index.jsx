@@ -3,7 +3,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 // redux
-import { toogleLike, insertComment, newPost } from '../../actions/userActions'
+import { toogleLike, insertComment } from '../../actions/userActions'
 import { setPosts, setUser } from '../../actions/serverActions'
 
 // socket.io
@@ -19,9 +19,6 @@ import { Grid, ContentGrid, Container } from './style'
 
 class App extends React.Component {
   componentDidMount () {
-    socket.on('newPost', (post) => {
-      this.props.newPost(post, 'socket')
-    })
     socket.on('newComment', (payload) => {
       this.props.insertComment(payload.username, payload.postId, payload.text, 'socket')
     })
@@ -71,5 +68,5 @@ const mapStateToProps = (state) => {
     user: state.user
   }
 }
-const AppConnect = connect(mapStateToProps, {toogleLike, insertComment, setPosts, setUser, newPost})(App)
+const AppConnect = connect(mapStateToProps, {toogleLike, insertComment, setPosts, setUser})(App)
 export default AppConnect
